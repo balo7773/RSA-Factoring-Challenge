@@ -1,0 +1,31 @@
+#!/usr/bin/python3
+
+# import module
+import sys
+
+
+# prime factorization function
+def prime_factorization():
+    """
+    rsa function
+    """
+    try:
+        file = sys.argv[1]
+        with open(file) as f:
+            for num in f:
+                num = int(num)
+                if num % 2 == 0:
+                        print("{}={}*{}".format(num, num // 2, 2))
+                        continue
+                i = 3
+                while i < num // 2:
+                    if num % i == 0:
+                        print("{}={}*{}".format(num, num // i, i))
+                        break
+                    i = i + 2
+                if i == (num // 2) + 1:
+                    print("{}={}*{}".format(num, num, 1))
+    except IndexError as e:
+        pass
+
+prime_factorization()
