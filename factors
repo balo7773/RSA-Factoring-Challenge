@@ -1,0 +1,32 @@
+#!/usr/bin/python3
+"""program that factorize modules"""
+from sys import argv
+
+
+def factorize(num):
+    """"factorize function"""
+    i = 2
+
+    if num < 2:
+        return
+    print()
+    print(value)
+    while num % i:
+        i += 1
+    print("{:.0f}={:.0f}*{:.0f}".format(num, num / i, i))
+    print(value)
+    print()
+
+if len(argv) != 2:
+    exit()
+
+try:
+    with open(argv[1]) as file:
+        line = file.readline()
+
+        while line != "":
+            value = int(line.split('\n')[0])
+            factorize(value)
+            line = file.readline()
+except:
+    pass
